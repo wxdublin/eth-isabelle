@@ -1,4 +1,5 @@
 machine:
+  timeout: 2400
   environment:
     BASH_ENV: "$HOME/.bashrc"
 dependencies:
