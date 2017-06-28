@@ -3,6 +3,11 @@ machine:
     BASH_ENV: "$HOME/.bashrc"
 dependencies:
   override:
+    - sed -n '/pyenv/!p' $HOME/.circlerc > tmp
+    - mv tmp $HOME/.circlerc
+    - sed -n '/phpenv/!p' $HOME/.circlerc > tmp
+    - mv tmp $HOME/.circlerc
+    - cat $HOME/.circlerc
     - sudo apt-get -qq update
     - sudo apt-get -qq install libgmp3-dev
     - wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sudo sh -s /usr/local/bin
