@@ -3,6 +3,7 @@ machine:
     BASH_ENV: "$HOME/.bashrc"
 dependencies:
   override:
+    - git submodule update --init
     - sed -n '/pyenv/!p' $HOME/.circlerc > tmp
     - mv tmp $HOME/.circlerc
     - sed -n '/phpenv/!p' $HOME/.circlerc > tmp
