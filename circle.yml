@@ -6,14 +6,14 @@ dependencies:
     - sudo apt-get -qq update
     - sudo apt-get -qq install libgmp3-dev
     - wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sudo sh -s /usr/local/bin
-    - export OPAMJOBS=2
+    - export OPAMJOBS=1
     - opam init -y --comp=4.04.1
     - echo $BASH_ENV
     - touch $BASH_ENV
     - echo 'eval `opam config env`' >> $BASH_ENV
     - opam update
     - opam install -y ocamlbuild ocamlfind batteries yojson bignum easy-format bisect_ppx zarith depext sha:
-        timeout: 2400
+        timeout: 3600
     - git clone https://github.com/mrsmkl/ECC-OCaml.git ECC-OCaml
     - echo $PATH
     - which ocamldep
